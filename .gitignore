@@ -1,0 +1,8 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/.vs
+/BackgroundServiceDemo/BackgroundServiceDemo/.vs/BackgroundServiceDemo.slnx
+/BackgroundServiceDemo/BackgroundServiceDemo/bin/Debug/net10.0
+/BackgroundServiceDemo/BackgroundServiceDemo/obj
