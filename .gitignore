@@ -4,5 +4,14 @@
 
 /.vs
 /BackgroundServiceDemo/BackgroundServiceDemo/.vs/BackgroundServiceDemo.slnx
-/BackgroundServiceDemo/BackgroundServiceDemo/bin/Debug/net10.0
+/BackgroundServiceDemo/BackgroundServiceDemo/bin
 /BackgroundServiceDemo/BackgroundServiceDemo/obj
+/BackgroundServiceDemo/BackgroundServiceDemo/.vs
+AspNetWithDocker/bin
+AspNetWithDocker/obj
+AspNetWithDocker/.vs
+
+DockerWebApiInAzure/bin
+DockerWebApiInAzure/obj
+DockerWebApiInAzure/.vs
+AspNetWithDocker/.vscode

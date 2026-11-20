@@ -1,0 +1,11 @@
+@AspNetWithDocker_HostAddress = http://localhost:5207
+
+GET {{AspNetWithDocker_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{AspNetWithDocker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
