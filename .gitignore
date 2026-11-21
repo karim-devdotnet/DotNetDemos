@@ -15,3 +15,6 @@ DockerWebApiInAzure/bin
 DockerWebApiInAzure/obj
 DockerWebApiInAzure/.vs
 AspNetWithDocker/.vscode
+/DotNetApiWithRedis/ProductCatalog/src/ProductCatalog.Api/bin
+/DotNetApiWithRedis/ProductCatalog/src/ProductCatalog.Api/obj
+/DotNetApiWithRedis/ProductCatalog/src/ProductCatalog.Api/.vs

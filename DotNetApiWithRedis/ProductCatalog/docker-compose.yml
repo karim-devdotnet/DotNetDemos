@@ -1,0 +1,57 @@
+name: productcatalogDemo
+
+services:
+  api:
+    build:
+      context: ./src/ProductCatalog.Api
+      dockerfile: Dockerfile
+    container_name: ProductCatalog-api
+    ports:
+      - "5134:5134"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 5134
+      ConnectionStrings__Postgres: "Host=postgres;Port=5432;Database=ProductCatalog;Username=postgres;Password=password"
+      ConnectionStrings__Redis: "redis:6379"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:17
+    container_name: ProductCatalog-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ProductCatalog
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5430:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ProductCatalog"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7.4-alpine
+    container_name: ProductCatalog-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  postgres-data:
+  redis-data:
